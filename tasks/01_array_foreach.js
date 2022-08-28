@@ -9,7 +9,7 @@
  * Segítségével a tömb elemeit tudod bejárni.
  * A names.forEach() egyenként átadja a tömb elemeit a callback függvénynek.
  * A copyArrayElements függvény a tömb elemeit átadja a callback függvénynek,  
- * majd az push-olja őket egy ú tömbbe. A push metódus mindig hozzáad egy  
+ * majd az push-olja őket egy új tömbbe. A push metódus mindig hozzáad egy  
  * új elemet a tömb végéhez.
  * FONTOS: az eredeti tömb, tehát amit names néven átadsz  
  * nem fog megváltozni a forEach futtatása során, csak ha ezt kifejezetten akarod! 
@@ -17,9 +17,10 @@
  */
 function copyArrayElements(names = ['Ali', 'Géza', 'Botond']) {
     const namesCopy = [];
-    names.forEach( name => namesCopy.push(name) );
-    return namesCopy;
+    names.forEach( name => namesCopy.push(name) ); 
+    return namesCopy; 
 }
+
 
 /**
  * Feladatok: minden függvény előtt le lesz írva, mi a pontos feladat.
@@ -39,7 +40,9 @@ function copyArrayElements(names = ['Ali', 'Géza', 'Botond']) {
  * @desc Ha segítség kell, nézd meg a példafüggvényt feljebb.
  */
 const copyFoodArray = (food = ['milk', 'bread', 'apple']) => {
-    // return;
+    const foodCopy = [0];
+    food.forEach(f => foodCopy.push(f));
+     return foodCopy;
 }
 
 /**

@@ -13,7 +13,7 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
  */
 function getSortedNamesArray(names = ['Ali', 'Géza', 'Botond']) {
-    return names.sort();
+    return names.sort(name => name[i]); 
 }
 
 /**
