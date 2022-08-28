@@ -16,9 +16,9 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  */
 function copyArrayElements(names = ['Ali', 'Géza', 'Botond']) {
-    const namesCopy = [];
-    names.forEach( name => namesCopy.push(name) ); 
-    return namesCopy; 
+  const namesCopy = [];
+  names.forEach(name => namesCopy.push(name));
+  return namesCopy;
 }
 
 
@@ -40,9 +40,9 @@ function copyArrayElements(names = ['Ali', 'Géza', 'Botond']) {
  * @desc Ha segítség kell, nézd meg a példafüggvényt feljebb.
  */
 const copyFoodArray = (food = ['milk', 'bread', 'apple']) => {
-    const foodCopy = [0];
-    food.forEach(f => foodCopy.push(f));
-     return foodCopy;
+  const foodCopy = [];
+  food.forEach(f => foodCopy.push(f));
+  return foodCopy;
 }
 
 /**
@@ -58,13 +58,13 @@ const copyFoodArray = (food = ['milk', 'bread', 'apple']) => {
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
  */
 const findNamesWithA = (names = ['Bill', 'Anna']) => {
-    // 
-    names.forEach( name => {
-        if (name.includes('a')) {
-            namesWithA.push(name);
-        }
-    });
-    // 
+  const namesWithA = [];
+  names.forEach(name => {
+    if (name.includes('a')) {
+      namesWithA.push(name);
+    }
+  });
+  return namesWithA;
 }
 
 /**
@@ -76,9 +76,17 @@ const findNamesWithA = (names = ['Bill', 'Anna']) => {
  * @returns {number[]} - a prices tömbből a 100-nál nagyobb értékek tömbje.
  * @desc a lényeges változás az if feltételben lesz.
  */
-const findBigPrices = (prices=[121, 41, 56, 1245]) => {
-    // 
+const findBigPrices = (prices = [121, 41, 56, 1245]) => {
+  const biggerThanHundred = [];
+  prices.forEach((p) => {
+
+    if (p > 100) {
+      biggerThanHundred.push(p);
+    }
+  });
+  return biggerThanHundred;
 }
+
 
 /**
  * 4. feladat
@@ -93,6 +101,15 @@ const findBigPrices = (prices=[121, 41, 56, 1245]) => {
  * EXPORTÁLD A FÜGGVÉNYT!
  */
 
+const findEvens = (prices = [121, 41, 56, 1245]) => {
+  const evens = [];
+  prices.forEach((p) => {
+    if (p % 2 === 0) {
+      evens.push(p);
+    }
+  });
+  return evens;
+};
 
 
 /**
@@ -108,7 +125,15 @@ const findBigPrices = (prices=[121, 41, 56, 1245]) => {
  * Vigyázz, ez most egy objektumban lesz: e.salary > 100000
  * EXPORTÁLD A FÜGGVÉNYT!
  */
-
+const findHigherSalariedEmployees = (employees = [{ name: '', salary: 200000 }]) => {
+  const biggerThan = [];
+  employees.forEach((e) => {
+    if (e.salary > 300000) {
+      biggerThan.push(e);
+    }
+  });
+  return biggerThan
+};
 
 
 /**
@@ -124,7 +149,17 @@ const findBigPrices = (prices=[121, 41, 56, 1245]) => {
  * @desc annyiban nehezebb az előzőnél, hogy két feltételt kell vizsgálnod.
  * EXPORTÁLD A FÜGGVÉNYT!
  */
+const findEmployeesFromMarketing = (employees = [{ name: '', salary: 200000, dep: 'marketing' }]) => {
+  const bigAndMarketing = [];
 
+  employees.forEach((e) => {
+    if (e.salary > 300000 && e.dep.includes('marketing')) {
+      bigAndMarketing.push(e);
+
+    }
+  });
+  return bigAndMarketing;
+};
 
 
 /**
@@ -139,15 +174,28 @@ const findBigPrices = (prices=[121, 41, 56, 1245]) => {
  * Ha szerepel benne a `gmail` részlet akkor gmail-esnek lehet venni.
  * EXPORTÁLD A FÜGGVÉNYT!
  */
+const findGermanMigrants = (citizens = [{ nation: 'German', email: 'franz@gmail.com', city: 'Budapest' }]) => {
+  const germanMigrantsWithGmail = [];
+  citizens.forEach((c) => {
+    if (c.nation.includes('German') && c.email.includes('gmail') && c.city.includes('Budapest')) {
+      germanMigrantsWithGmail.push(c)
+    }
+  });
+  return germanMigrantsWithGmail;
+};
+
+
+
+
 
 
 
 export {
-    copyFoodArray,
-    findNamesWithA,
-    findBigPrices,
-
-
-
-
+  copyFoodArray,
+  findNamesWithA,
+  findBigPrices,
+  findEvens,
+  findHigherSalariedEmployees,
+  findEmployeesFromMarketing,
+  findGermanMigrants
 }
